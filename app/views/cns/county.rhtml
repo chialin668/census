@@ -1,0 +1,23 @@
+<html><head><title>Test</title>
+    <%= GMap.header %>
+	<%= javascript_include_tag("clusterer") %>
+    <%= @map.to_html %>
+
+</head>
+<body>
+	<table cellspacing='0' border='1'>
+		<tr>
+			<td>
+				<%= @map.div(:width => 670, :height => 550) %>
+			</td>
+		</tr>
+	</table>		
+	<br />
+
+	<div id='legend_ajax'>
+	</div>
+	
+</body>
+</html>
+
+

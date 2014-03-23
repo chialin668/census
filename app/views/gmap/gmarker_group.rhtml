@@ -1,0 +1,14 @@
+<html>
+<head><title>Test</title>
+        <%= GMap.header %>
+		<%= javascript_include_tag("markerGroup") %>
+        <%= @map.to_html %>
+</head>
+<body>
+	<a href="#" onclick="myGroup.showMarker(1);return false;">Click here to display marker1</a>
+    <a href="#" onclick="myGroup.showMarker(2);return false;">Click here to display marker2</a>
+				<%= @map.div(:width => 670, :height => 550) %>
+</body>
+</html>
+
+

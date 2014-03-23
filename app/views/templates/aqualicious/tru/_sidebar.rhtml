@@ -1,0 +1,39 @@
+
+   <div id="sidebarContainer">
+      <div id="sidebar">
+		 <div id="sidebar-categories">
+
+
+			County:
+			<%=
+
+				counties=CnsCounty.find(:all, :order=>'county_name')
+				county_names=[]
+				for county in counties
+					county_names << county.county_name
+				end
+
+				select_tag(:county_id, options_for_select(county_names, 1))
+
+				
+			%>
+			<%= hidden_field_tag :html_type, 'ajax' %>
+
+			<%=
+				ajax_params="'county_id='+ escape($('county_id').value) " +
+						"+ '&html_type='+ escape($('html_type').value)"
+
+
+				observe_field(:county_id,
+							     :url => {
+									:controller => @app_name.downcase,
+									:action => :county},
+							     :with => ajax_params,
+							     :update => 'ajax_div')
+			%>	
+
+		</div>					 
+      </div> <!-- sidebar -->
+    </div> <!-- sidbarContainer -->
+		 	
+

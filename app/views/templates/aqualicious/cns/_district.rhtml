@@ -1,0 +1,65 @@
+<%= hidden_field_tag :html_type, 'ajax' %>
+
+<%
+	ajax_params="'county_name='+ escape($('county_name').value) " +
+			"+ '&district_name='+ escape($('district_name').value) " +
+			"+ '&html_type='+ escape($('html_type').value)" + 
+			"+ '&stype='+ escape($('stype').value)" 
+%>
+
+<h2></h2><%= @county_name %> County</h2> <br /><br/>
+
+<!------------------- School Type ---------------------->
+School Type:<br />
+	<%= select_tag(:stype, options_for_select(['H', 'M', 'E']), 
+							:onchange=>remote_function(
+								:url =>{:controller => @app_name.downcase, :action => :refresh_district},
+								:with => ajax_params)) 
+	%>
+<br /><br />
+
+<!------------------- Districts ---------------------->
+<%= hidden_field_tag :county_name, "#{@county_name}" %>
+
+	Districts: <br />
+	<%
+		districts=IfsSchool.find(:all, :conditions => {:county_name => @county_name, :stype => @stype}, :order => 'district_name');
+		district_names=[]
+		for district in districts
+			district_name = "#{district.district_name}" if district.district_name.size > 20
+			district_name = district.district_name if district.district_name.size <= 20
+			district_names << district_name
+		end
+
+	%>
+	<div id='district_div'>
+	<%= select_tag(:district_name, options_for_select(@district_name_array.uniq), 
+							:onchange=>remote_function(
+								:url =>{:controller => @app_name.downcase, :action => :refresh_district},
+								:with => ajax_params)) 
+	%>
+	</div>
+<br /><br />
+
+
+Display:<br />
+<%= radio_button_tag "marker", "checked", false, :id => 'school', 
+							:onchange => remote_function(
+										:url =>{:controller => @app_name.downcase, :action => :refresh_district},
+										:with => ajax_params + "+ '&school='+ escape($('school').value)" ) %>Show All Schools <br />
+										
+<%= radio_button_tag "marker","checked", false,:id => 'county',
+							:onchange => remote_function(
+										:url =>{:controller => @app_name.downcase, :action => :refresh_district},
+										:with => ajax_params + "+ '&county='+ escape($('county').value)" ) %>Schools in County Top-10<br />
+	
+<%= radio_button_tag "marker","checked", false,:id => 'state',
+							:onchange => remote_function(
+										:url =>{:controller => @app_name.downcase, :action => :refresh_district},
+										:with => ajax_params + "+ '&state='+ escape($('state').value)" ) %>Schools in State Top-50<br />
+<br />
+
+<hr>
+
+<div id='sidebar_ajax'>
+</div>		

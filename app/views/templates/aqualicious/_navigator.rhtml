@@ -1,0 +1,10 @@
+
+  <div id="navcontainer">
+    <ul>
+      <li><a href="/" rel="self" <%= %Q(id="current" name="current") if @app_name=='DEMO' %>>iFanSee</a></li>
+      <li><a href="/tru/county" rel="self" <%= %Q(id="current" name="current") if @app_name=='TRU' %>>Real Estate</a></li>
+      <li><a href="/school/district_gmarker" rel="self" <%= %Q(id="current" name="current") if @app_name=='SCHOOL' %>>School</a></li>
+	  <li><a href="/about" rel="self" <%= %Q(id="current" name="current") if @app_name=='ABOUT' %>>About</a></li>
+    </ul>
+  </div> <!-- navigation -->
+

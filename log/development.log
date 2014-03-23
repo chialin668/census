@@ -1,0 +1,1691 @@
+# Logfile created on Sun Feb 24 09:20:34 -0800 2008 by /
+
+
+Processing GmapController#index (for 127.0.0.1 at 2008-02-24 09:20:42) [GET]
+  Session ID: beac6ad7f9152e1464b7660a4ef00570
+  Parameters: {"action"=>"index", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/index
+Rendered templates/aqualicious/_meta (0.00070)
+Rendered templates/aqualicious/_stylesheet (0.00199)
+Rendered templates/aqualicious/_script (0.00076)
+Rendered templates/aqualicious/_navigator (0.00099)
+  [4;36;1mSQL (0.000203)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsCounty Load (0.003482)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003355)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.06580)
+Rendered templates/aqualicious/_body_before_content (0.06828)
+Rendered templates/aqualicious/_message (0.00192)
+Rendered templates/aqualicious/_footer (0.00113)
+Rendered templates/aqualicious/_body_after_content (0.00228)
+Completed in 0.08219 (12 reqs/sec) | Rendering: 0.07391 (89%) | DB: 0.00704 (8%) | 200 OK [http://localhost/gmap]
+
+
+Processing CnsController#county (for 127.0.0.1 at 2008-02-24 09:20:49) [GET]
+  Session ID: beac6ad7f9152e1464b7660a4ef00570
+  Parameters: {"action"=>"county", "controller"=>"cns"}
+Rendering  within layouts/cns
+Rendering cns/county
+Rendered templates/aqualicious/_meta (0.00009)
+Rendered templates/aqualicious/_stylesheet (0.00010)
+Rendered templates/aqualicious/_script (0.00008)
+Rendered templates/aqualicious/_navigator (0.00009)
+  [4;35;1mCnsCounty Load (0.003750)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003563)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+Rendered templates/aqualicious/cns/_county (0.08361)
+Rendered templates/aqualicious/cns/_sidebar (0.08487)
+Rendered templates/aqualicious/_body_before_content (0.08539)
+Rendered templates/aqualicious/_message (0.00012)
+Rendered templates/aqualicious/_footer (0.00008)
+Rendered templates/aqualicious/_body_after_content (0.00033)
+Completed in 0.11864 (8 reqs/sec) | Rendering: 0.08459 (71%) | DB: 0.00731 (6%) | 200 OK [http://localhost/cns/county]
+
+
+Processing CnsController#county (for 127.0.0.1 at 2008-02-28 18:30:51) [GET]
+  Session ID: 7a80752fc34cba2747b53b8c1226bdc7
+  Parameters: {"action"=>"county", "controller"=>"cns"}
+Rendering  within layouts/cns
+Rendering cns/county
+Rendered templates/aqualicious/_meta (0.05445)
+Rendered templates/aqualicious/_stylesheet (0.01410)
+Rendered templates/aqualicious/_script (0.00157)
+Rendered templates/aqualicious/_navigator (0.02026)
+  [4;36;1mSQL (0.054534)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsCounty Load (0.053647)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.020299)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+Rendered templates/aqualicious/cns/_county (0.32142)
+Rendered templates/aqualicious/cns/_sidebar (0.33730)
+Rendered templates/aqualicious/_body_before_content (0.37164)
+Rendered templates/aqualicious/_message (0.02296)
+Rendered templates/aqualicious/_footer (0.00194)
+Rendered templates/aqualicious/_body_after_content (0.00872)
+Completed in 0.68768 (1 reqs/sec) | Rendering: 0.53171 (77%) | DB: 0.12848 (18%) | 200 OK [http://localhost/cns/county]
+
+
+Processing CnsController#refresh_county (for 127.0.0.1 at 2008-02-28 18:30:55) [POST]
+  Session ID: 7a80752fc34cba2747b53b8c1226bdc7
+  Parameters: {"county_name"=>"Alpine", "action"=>"refresh_county", "stype"=>"H", "controller"=>"cns", "html_type"=>"ajax"}
+  [4;35;1mCnsCounty Columns (0.003044)[0m   [0mSHOW FIELDS FROM cns_counties[0m
+  [4;36;1mCnsCounty Load (0.002441)[0m   [0;1mSELECT * FROM cns_counties WHERE (cns_counties.`county_name` = 'Alpine') [0m
+  [4;35;1mCnsCountyPolygon Columns (0.028912)[0m   [0mSHOW FIELDS FROM cns_county_polygons[0m
+  [4;36;1mCnsCountyPolygon Load (0.080969)[0m   [0;1mSELECT * FROM cns_county_polygons WHERE (cns_county_polygons.`polygon_id` = 21) [0m
+Rendering cns/refresh_county
+Completed in 0.18670 (5 reqs/sec) | Rendering: 0.03562 (19%) | DB: 0.11537 (61%) | 200 OK [http://localhost/cns/refresh_county]
+
+
+Processing CnsController#refresh_county (for 127.0.0.1 at 2008-02-28 18:30:57) [POST]
+  Session ID: 7a80752fc34cba2747b53b8c1226bdc7
+  Parameters: {"county_name"=>"Alpine", "district"=>"checked", "action"=>"refresh_county", "stype"=>"H", "controller"=>"cns", "html_type"=>"ajax"}
+  [4;35;1mCnsCounty Columns (0.003730)[0m   [0mSHOW FIELDS FROM cns_counties[0m
+  [4;36;1mCnsCounty Load (0.001083)[0m   [0;1mSELECT * FROM cns_counties WHERE (cns_counties.`county_name` = 'Alpine') [0m
+  [4;35;1mCnsCountyPolygon Columns (0.003039)[0m   [0mSHOW FIELDS FROM cns_county_polygons[0m
+  [4;36;1mCnsCountyPolygon Load (0.018928)[0m   [0;1mSELECT * FROM cns_county_polygons WHERE (cns_county_polygons.`polygon_id` = 21) [0m
+  [4;35;1mApiSummary Columns (0.024226)[0m   [0mSHOW FIELDS FROM api_summaries[0m
+  [4;36;1mApiSummary Load (0.171759)[0m   [0;1mSELECT * FROM api_summaries WHERE (api_summaries.`county_name` = 'Alpine' AND api_summaries.`year` = '2007' AND api_summaries.`school_type` = 'H') [0m
+  [4;35;1mIfsSchool Load (0.072212)[0m   [0m
+ SELECT *
+ FROM ifs_schools 
+ WHERE stype in (1,3,4)
+ and county_name = 'Alpine'
+ and status = 'OPEN'
+ order by district_name; 
+ [0m
+Rendering cns/refresh_county
+  [4;36;1mIfsSchool Columns (0.004205)[0m   [0;1mSHOW FIELDS FROM ifs_schools[0m
+Completed in 0.38009 (2 reqs/sec) | Rendering: 0.01751 (4%) | DB: 0.29918 (78%) | 200 OK [http://localhost/cns/refresh_county]
+
+
+Processing CnsController#refresh_county (for 127.0.0.1 at 2008-02-28 18:31:00) [POST]
+  Session ID: 7a80752fc34cba2747b53b8c1226bdc7
+  Parameters: {"county_name"=>"Alameda", "action"=>"refresh_county", "stype"=>"H", "controller"=>"cns", "html_type"=>"ajax"}
+  [4;35;1mCnsCounty Columns (0.002626)[0m   [0mSHOW FIELDS FROM cns_counties[0m
+  [4;36;1mCnsCounty Load (0.000866)[0m   [0;1mSELECT * FROM cns_counties WHERE (cns_counties.`county_name` = 'Alameda') [0m
+  [4;35;1mCnsCountyPolygon Columns (0.003373)[0m   [0mSHOW FIELDS FROM cns_county_polygons[0m
+  [4;36;1mCnsCountyPolygon Load (0.027446)[0m   [0;1mSELECT * FROM cns_county_polygons WHERE (cns_county_polygons.`polygon_id` = 35) [0m
+  [4;35;1mApiSummary Columns (0.003740)[0m   [0mSHOW FIELDS FROM api_summaries[0m
+  [4;36;1mApiSummary Load (0.066720)[0m   [0;1mSELECT * FROM api_summaries WHERE (api_summaries.`county_name` = 'Alameda' AND api_summaries.`year` = '2007' AND api_summaries.`school_type` = 'H') [0m
+  [4;35;1mIfsSchool Load (0.026238)[0m   [0m
+ SELECT *
+ FROM ifs_schools 
+ WHERE stype in (1,3,4)
+ and county_name = 'Alameda'
+ and status = 'OPEN'
+ order by district_name; 
+ [0m
+Rendering cns/refresh_county
+  [4;36;1mIfsSchool Columns (0.004236)[0m   [0;1mSHOW FIELDS FROM ifs_schools[0m
+Completed in 0.26449 (3 reqs/sec) | Rendering: 0.08770 (33%) | DB: 0.13524 (51%) | 200 OK [http://localhost/cns/refresh_county]
+
+
+Processing CnsController#refresh_county (for 127.0.0.1 at 2008-02-28 18:31:01) [POST]
+  Session ID: 7a80752fc34cba2747b53b8c1226bdc7
+  Parameters: {"county_name"=>"Alameda", "county"=>"checked", "action"=>"refresh_county", "stype"=>"H", "controller"=>"cns", "html_type"=>"ajax"}
+  [4;35;1mCnsCounty Columns (0.003387)[0m   [0mSHOW FIELDS FROM cns_counties[0m
+  [4;36;1mCnsCounty Load (0.002249)[0m   [0;1mSELECT * FROM cns_counties WHERE (cns_counties.`county_name` = 'Alameda') [0m
+  [4;35;1mCnsCountyPolygon Columns (0.002954)[0m   [0mSHOW FIELDS FROM cns_county_polygons[0m
+  [4;36;1mCnsCountyPolygon Load (0.024561)[0m   [0;1mSELECT * FROM cns_county_polygons WHERE (cns_county_polygons.`polygon_id` = 35) [0m
+  [4;35;1mApiGrowth Load (0.267949)[0m   [0m
+ select * 
+ from api_growths
+ where school_type='H' 
+ and year='2007'
+ and county_name='Alameda'
+ and county_rank <= 10
+ order by county_rank
+ [0m
+  [4;36;1mApiGrowth Columns (0.004407)[0m   [0;1mSHOW FIELDS FROM api_growths[0m
+  [4;35;1mIfsSchool Load (0.014016)[0m   [0m
+ select *
+ from ifs_schools
+ where stype = 'H'
+ and county_name = 'Alameda'
+ and status = 'OPEN'
+ order by school_name
+ [0m
+Rendering cns/refresh_county
+  [4;36;1mIfsSchool Columns (0.002975)[0m   [0;1mSHOW FIELDS FROM ifs_schools[0m
+Completed in 0.41686 (2 reqs/sec) | Rendering: 0.01964 (4%) | DB: 0.32250 (77%) | 200 OK [http://localhost/cns/refresh_county]
+
+
+Processing CnsController#county (for 127.0.0.1 at 2008-02-28 22:24:00) [GET]
+  Session ID: 7a80752fc34cba2747b53b8c1226bdc7
+  Parameters: {"action"=>"county", "controller"=>"cns"}
+Rendering  within layouts/cns
+Rendering cns/county
+Rendered templates/aqualicious/_meta (0.00049)
+Rendered templates/aqualicious/_stylesheet (0.00155)
+Rendered templates/aqualicious/_script (0.00062)
+Rendered templates/aqualicious/_navigator (0.00084)
+  [4;36;1mSQL (0.000207)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsCounty Load (0.003606)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.002945)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+Rendered templates/aqualicious/cns/_county (0.06782)
+Rendered templates/aqualicious/cns/_sidebar (0.06896)
+Rendered templates/aqualicious/_body_before_content (0.07107)
+Rendered templates/aqualicious/_message (0.00128)
+Rendered templates/aqualicious/_footer (0.00060)
+Rendered templates/aqualicious/_body_after_content (0.00145)
+Completed in 0.11481 (8 reqs/sec) | Rendering: 0.07562 (65%) | DB: 0.00676 (5%) | 200 OK [http://localhost/cns/county]
+
+
+Processing CnsController#county (for 127.0.0.1 at 2008-03-03 19:34:12) [GET]
+  Session ID: 0bbff5db5f0af39a023a59b53ffe85c3
+  Parameters: {"action"=>"county", "controller"=>"cns"}
+Rendering  within layouts/cns
+Rendering cns/county
+Rendered templates/aqualicious/_meta (0.05408)
+Rendered templates/aqualicious/_stylesheet (0.01357)
+Rendered templates/aqualicious/_script (0.00119)
+Rendered templates/aqualicious/_navigator (0.02038)
+  [4;36;1mSQL (0.000281)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsCounty Load (0.023232)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.027485)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+Rendered templates/aqualicious/cns/_county (0.19175)
+Rendered templates/aqualicious/cns/_sidebar (0.20700)
+Rendered templates/aqualicious/_body_before_content (0.24203)
+Rendered templates/aqualicious/_message (0.00251)
+Rendered templates/aqualicious/_footer (0.00167)
+Rendered templates/aqualicious/_body_after_content (0.00366)
+Completed in 0.39769 (2 reqs/sec) | Rendering: 0.31911 (80%) | DB: 0.05100 (12%) | 200 OK [http://localhost/cns/county]
+
+
+Processing CnsController#refresh_county (for 127.0.0.1 at 2008-03-03 19:34:16) [POST]
+  Session ID: 0bbff5db5f0af39a023a59b53ffe85c3
+  Parameters: {"county_name"=>"Alameda", "district"=>"checked", "action"=>"refresh_county", "stype"=>"H", "controller"=>"cns", "html_type"=>"ajax"}
+  [4;35;1mCnsCounty Columns (0.004160)[0m   [0mSHOW FIELDS FROM cns_counties[0m
+  [4;36;1mCnsCounty Load (0.046135)[0m   [0;1mSELECT * FROM cns_counties WHERE (cns_counties.`county_name` = 'Alameda') [0m
+  [4;35;1mCnsCountyPolygon Columns (0.003807)[0m   [0mSHOW FIELDS FROM cns_county_polygons[0m
+  [4;36;1mCnsCountyPolygon Load (0.031635)[0m   [0;1mSELECT * FROM cns_county_polygons WHERE (cns_county_polygons.`polygon_id` = 35) [0m
+  [4;35;1mApiSummary Columns (0.003778)[0m   [0mSHOW FIELDS FROM api_summaries[0m
+  [4;36;1mApiSummary Load (0.127843)[0m   [0;1mSELECT * FROM api_summaries WHERE (api_summaries.`county_name` = 'Alameda' AND api_summaries.`year` = '2007' AND api_summaries.`school_type` = 'H') [0m
+  [4;35;1mIfsSchool Load (0.040338)[0m   [0m
+ SELECT *
+ FROM ifs_schools 
+ WHERE stype in (1,3,4)
+ and county_name = 'Alameda'
+ and status = 'OPEN'
+ order by district_name; 
+ [0m
+Rendering cns/refresh_county
+  [4;36;1mIfsSchool Columns (0.003015)[0m   [0;1mSHOW FIELDS FROM ifs_schools[0m
+Completed in 0.40672 (2 reqs/sec) | Rendering: 0.04759 (11%) | DB: 0.26071 (64%) | 200 OK [http://localhost/cns/refresh_county]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-08 07:37:23) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/geo_coder" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-08 07:37:34) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/geo_coder.html" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-08 07:38:28) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/map_geobound.html" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing SchoolController#index (for 127.0.0.1 at 2008-03-08 07:39:36) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"index", "controller"=>"school"}
+Rendering  within layouts/school
+Rendering school/index
+Rendered templates/aqualicious/_meta (0.05604)
+Rendered templates/aqualicious/_stylesheet (0.01399)
+Rendered templates/aqualicious/_script (0.00178)
+Rendered templates/aqualicious/_navigator (0.02052)
+Rendered templates/aqualicious/school/_sidebar (0.00062)
+Rendered templates/aqualicious/_body_before_content (0.02392)
+Rendered templates/aqualicious/_message (0.00275)
+Rendered templates/aqualicious/_footer (0.01854)
+Rendered templates/aqualicious/_body_after_content (0.02032)
+Completed in 0.15528 (6 reqs/sec) | Rendering: 0.15421 (99%) | 200 OK [http://localhost/school]
+
+
+Processing TruController#index (for 127.0.0.1 at 2008-03-08 07:39:42) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"index", "controller"=>"tru"}
+
+
+ActionController::UnknownAction (No action responded to index):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing SchoolCountyController#index (for 127.0.0.1 at 2008-03-08 07:40:08) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"index", "controller"=>"school_county"}
+
+
+ActionController::MissingTemplate (Missing template script/../config/../app/views/school_county/index.rhtml):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1205:in `assert_existence_of_template_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:804:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-08 07:40:24) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/true/state" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing TruController#state (for 127.0.0.1 at 2008-03-08 07:40:39) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"state", "controller"=>"tru"}
+  [4;36;1mSQL (0.000203)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsState Columns (0.003557)[0m   [0mSHOW FIELDS FROM cns_states[0m
+  [4;36;1mCnsState Load (0.028217)[0m   [0;1mSELECT * FROM cns_states WHERE (cns_states.`state_code` = 'CA') LIMIT 1[0m
+  [4;35;1mCnsStatePolygon Columns (0.003062)[0m   [0mSHOW FIELDS FROM cns_state_polygons[0m
+  [4;36;1mCnsStatePolygon Load (0.149638)[0m   [0;1mSELECT * FROM cns_state_polygons WHERE (cns_state_polygons.`polygon_id` = 1) [0m
+Rendering  within layouts/tru
+Rendering tru/state
+Rendered templates/aqualicious/_meta (0.00015)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.005919)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.002959)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+Rendered templates/aqualicious/tru/_sidebar (0.10371)
+Rendered templates/aqualicious/_body_before_content (0.10441)
+Rendered templates/aqualicious/_message (0.00012)
+Rendered templates/aqualicious/_footer (0.00008)
+Rendered templates/aqualicious/_body_after_content (0.00048)
+Completed in 0.72195 (1 reqs/sec) | Rendering: 0.21674 (30%) | DB: 0.19356 (26%) | 200 OK [http://localhost/tru/state]
+
+
+Processing TruController#county (for 127.0.0.1 at 2008-03-08 07:43:23) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"county", "controller"=>"tru"}
+  [4;35;1mCnsCounty Columns (0.003043)[0m   [0mSHOW FIELDS FROM cns_counties[0m
+  [4;36;1mCnsCounty Load (0.003438)[0m   [0;1mSELECT * FROM cns_counties WHERE (cns_counties.`county_name` = 'Santa Clara') LIMIT 1[0m
+  [4;35;1mCnsCountyPolygon Columns (0.003200)[0m   [0mSHOW FIELDS FROM cns_county_polygons[0m
+  [4;36;1mCnsCountyPolygon Load (0.058295)[0m   [0;1mSELECT * FROM cns_county_polygons WHERE (cns_county_polygons.`polygon_id` = 45) [0m
+Rendering  within layouts/tru
+Rendering tru/county
+Rendered templates/aqualicious/_meta (0.00015)
+Rendered templates/aqualicious/_stylesheet (0.00014)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00013)
+  [4;35;1mCnsCounty Load (0.005090)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+Rendered templates/aqualicious/tru/_sidebar (0.00993)
+Rendered templates/aqualicious/_body_before_content (0.01063)
+Rendered templates/aqualicious/_message (0.00013)
+Rendered templates/aqualicious/_footer (0.00010)
+Rendered templates/aqualicious/_body_after_content (0.00042)
+Completed in 0.24025 (4 reqs/sec) | Rendering: 0.02250 (9%) | DB: 0.07307 (30%) | 200 OK [http://localhost/tru/county]
+
+
+Processing SchoolController#index (for 127.0.0.1 at 2008-03-08 07:57:42) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"index", "controller"=>"school"}
+Rendering  within layouts/school
+Rendering school/index
+Rendered templates/aqualicious/_meta (0.00050)
+Rendered templates/aqualicious/_stylesheet (0.00143)
+Rendered templates/aqualicious/_script (0.00062)
+Rendered templates/aqualicious/_navigator (0.00084)
+Rendered templates/aqualicious/school/_sidebar (0.00031)
+Rendered templates/aqualicious/_body_before_content (0.00245)
+Rendered templates/aqualicious/_message (0.00129)
+Rendered templates/aqualicious/_footer (0.00058)
+Rendered templates/aqualicious/_body_after_content (0.00137)
+Completed in 0.01183 (84 reqs/sec) | Rendering: 0.01102 (93%) | 200 OK [http://localhost/school]
+
+
+Processing SchoolController#district_gmarker (for 127.0.0.1 at 2008-03-08 07:59:00) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"district_gmarker", "controller"=>"school"}
+  [4;36;1mSQL (0.000202)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsSchool Columns (0.003713)[0m   [0mSHOW FIELDS FROM cns_schools[0m
+  [4;36;1mCnsSchool Load (0.023727)[0m   [0;1mSELECT * FROM cns_schools WHERE (cns_schools.`district_type` = 'E' AND cns_schools.`state_code` = 'CA' AND cns_schools.`district_name` = 'Cupertino Union Elementary') LIMIT 1[0m
+  [4;35;1mCnsSchoolPolygon Columns (0.003174)[0m   [0mSHOW FIELDS FROM cns_school_polygons[0m
+  [4;36;1mCnsSchoolPolygon Load (0.313521)[0m   [0;1mSELECT * FROM cns_school_polygons WHERE (cns_school_polygons.`district_type` = 'E' AND cns_school_polygons.`polygon_id` = 317) [0m
+  [4;35;1mIfsSchool Columns (0.002911)[0m   [0mSHOW FIELDS FROM ifs_schools[0m
+  [4;36;1mIfsSchool Load (0.018251)[0m   [0;1mSELECT * FROM ifs_schools WHERE (ifs_schools.`status` = 'OPEN' AND ifs_schools.`stype` = 'E' AND ifs_schools.`district_name` = 'Cupertino Union') [0m
+Rendering  within layouts/school
+Rendering school/district_gmarker
+Rendered templates/aqualicious/_meta (0.00008)
+Rendered templates/aqualicious/_stylesheet (0.00009)
+Rendered templates/aqualicious/_script (0.00008)
+Rendered templates/aqualicious/_navigator (0.00009)
+Rendered templates/aqualicious/school/_sidebar (0.00008)
+Rendered templates/aqualicious/_body_before_content (0.00059)
+Rendered templates/aqualicious/_message (0.00009)
+Rendered templates/aqualicious/_footer (0.00008)
+Rendered templates/aqualicious/_body_after_content (0.00032)
+Completed in 0.53684 (1 reqs/sec) | Rendering: 0.00443 (0%) | DB: 0.36550 (68%) | 200 OK [http://localhost/school/district_gmarker]
+
+
+Processing SchoolController#district_gmarker (for 127.0.0.1 at 2008-03-08 08:04:25) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"district_gmarker", "controller"=>"school"}
+  [4;35;1mCnsSchool Columns (0.003115)[0m   [0mSHOW FIELDS FROM cns_schools[0m
+  [4;36;1mCnsSchool Load (0.002218)[0m   [0;1mSELECT * FROM cns_schools WHERE (cns_schools.`district_type` = 'E' AND cns_schools.`state_code` = 'CA' AND cns_schools.`district_name` = 'Cupertino Union Elementary') LIMIT 1[0m
+  [4;35;1mCnsSchoolPolygon Columns (0.003162)[0m   [0mSHOW FIELDS FROM cns_school_polygons[0m
+  [4;36;1mCnsSchoolPolygon Load (0.196808)[0m   [0;1mSELECT * FROM cns_school_polygons WHERE (cns_school_polygons.`district_type` = 'E' AND cns_school_polygons.`polygon_id` = 317) [0m
+  [4;35;1mIfsSchool Columns (0.004780)[0m   [0mSHOW FIELDS FROM ifs_schools[0m
+  [4;36;1mIfsSchool Load (0.004005)[0m   [0;1mSELECT * FROM ifs_schools WHERE (ifs_schools.`status` = 'OPEN' AND ifs_schools.`stype` = 'E' AND ifs_schools.`district_name` = 'Cupertino Union') [0m
+Rendering  within layouts/school
+Rendering school/district_gmarker
+Rendered templates/aqualicious/_meta (0.00008)
+Rendered templates/aqualicious/_stylesheet (0.00009)
+Rendered templates/aqualicious/_script (0.00008)
+Rendered templates/aqualicious/_navigator (0.00009)
+Rendered templates/aqualicious/school/_sidebar (0.00007)
+Rendered templates/aqualicious/_body_before_content (0.00063)
+Rendered templates/aqualicious/_message (0.00008)
+Rendered templates/aqualicious/_footer (0.00007)
+Rendered templates/aqualicious/_body_after_content (0.00031)
+Completed in 0.31136 (3 reqs/sec) | Rendering: 0.00331 (1%) | DB: 0.21409 (68%) | 200 OK [http://localhost/school/district_gmarker]
+
+
+Processing SchoolController#district_gmarker (for 127.0.0.1 at 2008-03-08 08:04:30) [GET]
+  Session ID: 7ddf7d4129275a22f1afa74d207800e7
+  Parameters: {"action"=>"district_gmarker", "controller"=>"school"}
+  [4;35;1mCnsSchool Columns (0.003110)[0m   [0mSHOW FIELDS FROM cns_schools[0m
+  [4;36;1mCnsSchool Load (0.002009)[0m   [0;1mSELECT * FROM cns_schools WHERE (cns_schools.`district_type` = 'E' AND cns_schools.`state_code` = 'CA' AND cns_schools.`district_name` = 'Cupertino Union Elementary') LIMIT 1[0m
+  [4;35;1mCnsSchoolPolygon Columns (0.005886)[0m   [0mSHOW FIELDS FROM cns_school_polygons[0m
+  [4;36;1mCnsSchoolPolygon Load (0.194205)[0m   [0;1mSELECT * FROM cns_school_polygons WHERE (cns_school_polygons.`district_type` = 'E' AND cns_school_polygons.`polygon_id` = 317) [0m
+  [4;35;1mIfsSchool Columns (0.005155)[0m   [0mSHOW FIELDS FROM ifs_schools[0m
+  [4;36;1mIfsSchool Load (0.003878)[0m   [0;1mSELECT * FROM ifs_schools WHERE (ifs_schools.`status` = 'OPEN' AND ifs_schools.`stype` = 'E' AND ifs_schools.`district_name` = 'Cupertino Union') [0m
+Rendering  within layouts/school
+Rendering school/district_gmarker
+Rendered templates/aqualicious/_meta (0.00008)
+Rendered templates/aqualicious/_stylesheet (0.00009)
+Rendered templates/aqualicious/_script (0.00013)
+Rendered templates/aqualicious/_navigator (0.00009)
+Rendered templates/aqualicious/school/_sidebar (0.00007)
+Rendered templates/aqualicious/_body_before_content (0.00058)
+Rendered templates/aqualicious/_message (0.00008)
+Rendered templates/aqualicious/_footer (0.00007)
+Rendered templates/aqualicious/_body_after_content (0.00030)
+Completed in 0.25239 (3 reqs/sec) | Rendering: 0.00347 (1%) | DB: 0.21424 (84%) | 200 OK [http://localhost/school/district_gmarker]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-15 11:28:57) [GET]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/census" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing GmapController#index (for 127.0.0.1 at 2008-03-15 11:30:34) [GET]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {"action"=>"index", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/index
+Rendered templates/aqualicious/_meta (0.05203)
+Rendered templates/aqualicious/_stylesheet (0.02468)
+Rendered templates/aqualicious/_script (0.00162)
+Rendered templates/aqualicious/_navigator (0.02023)
+  [4;36;1mSQL (0.000202)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsCounty Load (0.003486)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003551)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.11935)
+Rendered templates/aqualicious/_body_before_content (0.15388)
+Rendered templates/aqualicious/_message (0.00284)
+Rendered templates/aqualicious/_footer (0.00150)
+Rendered templates/aqualicious/_body_after_content (0.00323)
+Completed in 0.28421 (3 reqs/sec) | Rendering: 0.27583 (97%) | DB: 0.00724 (2%) | 200 OK [http://localhost/gmap]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-03-15 11:30:38) [POST]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.04282 (23 reqs/sec) | Rendering: 0.04197 (98%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-03-15 11:30:49) [GET]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/gmarker" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing GmapController#gmarker (for 127.0.0.1 at 2008-03-15 11:30:59) [GET]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {"action"=>"gmarker", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/gmarker
+Rendered templates/aqualicious/_meta (0.00013)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.004665)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.002633)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.01957)
+Rendered templates/aqualicious/_body_before_content (0.02025)
+Rendered templates/aqualicious/_message (0.00011)
+Rendered templates/aqualicious/_footer (0.00008)
+Rendered templates/aqualicious/_body_after_content (0.00039)
+Completed in 0.10589 (9 reqs/sec) | Rendering: 0.09758 (92%) | DB: 0.00730 (6%) | 200 OK [http://localhost/gmap/gmarker]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-03-15 11:31:06) [POST]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00478 (209 reqs/sec) | Rendering: 0.00394 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-03-15 11:31:08) [POST]
+  Session ID: 8dfdc653beb70f1a2d950978e282ddcc
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00510 (196 reqs/sec) | Rendering: 0.00427 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-10-15 12:42:44) [GET]
+  Session ID: 0bdf76b300ad946339c80aae39820703
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/zip1" with {:method=>:get}):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing GeokitController#zip1 (for 127.0.0.1 at 2008-10-15 12:43:03) [GET]
+  Session ID: 0bdf76b300ad946339c80aae39820703
+  Parameters: {"action"=>"zip1", "controller"=>"geokit"}
+Google geocoding. Address: 95129. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>95129</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>San Jose, CA 95129, USA</address><AddressDetails Accuracy="5" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Jose</LocalityName><PostalCode><PostalCodeNumber>95129</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.987122,37.305227,0</coordinates></Point></Placemark></Response></kml>
+  [4;36;1mSQL (0.000330)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMyZipcode Load (0.000000)[0m   [0mMysql::Error: #42S02Table 'proj0_dev.my_zipcodes' doesn't exist: SELECT *, (ACOS(least(1,COS(0.651099039353887)*COS(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*COS(RADIANS(my_zipcodes.lng))+
+ COS(0.651099039353887)*SIN(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*SIN(RADIANS(my_zipcodes.lng))+
+ SIN(0.651099039353887)*SIN(RADIANS(my_zipcodes.lat))))*3963.19)
+ AS distance FROM my_zipcodes WHERE (geotype='C' and (ACOS(least(1,COS(0.651099039353887)*COS(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*COS(RADIANS(my_zipcodes.lng))+
+ COS(0.651099039353887)*SIN(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*SIN(RADIANS(my_zipcodes.lng))+
+ SIN(0.651099039353887)*SIN(RADIANS(my_zipcodes.lat))))*3963.19)
+ between 10 and 15) ORDER BY distance[0m
+
+
+ActiveRecord::StatementInvalid (Mysql::Error: #42S02Table 'proj0_dev.my_zipcodes' doesn't exist: SELECT *,                   (ACOS(least(1,COS(0.651099039353887)*COS(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*COS(RADIANS(my_zipcodes.lng))+
+                  COS(0.651099039353887)*SIN(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*SIN(RADIANS(my_zipcodes.lng))+
+                  SIN(0.651099039353887)*SIN(RADIANS(my_zipcodes.lat))))*3963.19)
+ AS distance FROM my_zipcodes WHERE (geotype='C' and                  (ACOS(least(1,COS(0.651099039353887)*COS(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*COS(RADIANS(my_zipcodes.lng))+
+                  COS(0.651099039353887)*SIN(-2.12907692393201)*COS(RADIANS(my_zipcodes.lat))*SIN(RADIANS(my_zipcodes.lng))+
+                  SIN(0.651099039353887)*SIN(RADIANS(my_zipcodes.lat))))*3963.19)
+ between 10 and 15)  ORDER BY distance):
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/abstract_adapter.rb:128:in `log'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/mysql_adapter.rb:243:in `execute'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/mysql_adapter.rb:399:in `select'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:427:in `find_by_sql'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:997:in `find_every'
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:418:in `find'
+    .//vendor/plugins/geokit/lib/geo_kit/acts_as_mappable.rb:109:in `find'
+    .//app/controllers/geokit_controller.rb:63:in `zip1'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing GeokitController#address (for 127.0.0.1 at 2008-10-15 12:43:36) [GET]
+  Session ID: 0bdf76b300ad946339c80aae39820703
+  Parameters: {"action"=>"address", "controller"=>"geokit"}
+  [4;36;1mIfsSchool Load (0.075783)[0m   [0;1mSELECT * FROM ifs_schools LIMIT 30[0m
+  [4;35;1mIfsSchool Columns (0.004704)[0m   [0mSHOW FIELDS FROM ifs_schools[0m
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 39899 Balentine Dr.,  Ste. 335, 94 Newark. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>39899 Balentine Dr.,  Ste. 335, 94 Newark</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>39899 Balentine Dr, Newark, CA 94560, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Newark</LocalityName><Thoroughfare><ThoroughfareName>39899 Balentine Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94560</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.992710,37.521609,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 1515 Webster St, Oakland, CA 94612-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>1515 Webster St, Oakland, CA 94612-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>1515 Webster St, Oakland, CA 94612, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Oakland</LocalityName><Thoroughfare><ThoroughfareName>1515 Webster St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94612</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.268054,37.804625,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address:  Agricultural & Nat., 597 C St., 94 Hayward. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name> Agricultural &amp; Nat., 597 C St., 94 Hayward</name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address:  Agricultural & Nat., 597 C St., 94 Hayward
+Google geocoding. Address: 2400 Fairmont Dr., San Leandro, CA 94578-1005. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2400 Fairmont Dr., San Leandro, CA 94578-1005</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2400 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2400 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.114369,37.713624,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: 2500 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2500 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2500 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2500 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.111939,37.712965,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2400 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2400 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2400 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2400 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.114369,37.713624,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2200 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2200 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2200 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2200 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.121530,37.717012,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2600 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2600 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2600 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2600 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.109384,37.712948,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2100 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2100 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2100 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2100 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.120958,37.712567,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 35725 Cedar Ave., Newark, CA 94560-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>35725 Cedar Ave., Newark, CA 94560-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>35725 Cedar Blvd, Newark, CA 94560, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Newark</LocalityName><Thoroughfare><ThoroughfareName>35725 Cedar Blvd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94560</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.037970,37.550630,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 685 A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>685 A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>685 A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>685 A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.088214,37.671124,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 685 A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>685 A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>685 A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>685 A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.088214,37.671124,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2200 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2200 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2200 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2200 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.121530,37.717012,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 35725 Cedar Blvd., Newark, CA 94560-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>35725 Cedar Blvd., Newark, CA 94560-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>35725 Cedar Blvd, Newark, CA 94560, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Newark</LocalityName><Thoroughfare><ThoroughfareName>35725 Cedar Blvd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94560</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.037970,37.550630,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 8151 Village Pkwy., Dublin, CA 94568-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>8151 Village Pkwy., Dublin, CA 94568-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>8151 Village Pkwy, Dublin, CA 94568, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Dublin</LocalityName><Thoroughfare><ThoroughfareName>8151 Village Pkwy</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94568</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.924043,37.720904,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 685 A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>685 A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>685 A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>685 A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.088214,37.671124,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 612 West A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>612 West A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>612 W A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>612 W A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.111913,37.666001,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 7997 Vomac Rd., Dublin, CA 94566-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>7997 Vomac Rd., Dublin, CA 94566-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>7997 Vomac Rd, Dublin, CA 94568, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Dublin</LocalityName><Thoroughfare><ThoroughfareName>7997 Vomac Rd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94568</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.936977,37.714333,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 6925 Chabot Rd., Oakland, CA 94618-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>6925 Chabot Rd., Oakland, CA 94618-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>6925 Chabot Rd, Oakland, CA 94618, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Oakland</LocalityName><Thoroughfare><ThoroughfareName>6925 Chabot Rd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94618</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.238983,37.851242,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 40950 Chapel Way, Fremont, CA 94538-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>40950 Chapel Way, Fremont, CA 94538-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>40950 Chapel Way, Fremont, CA 94538, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Fremont</LocalityName><Thoroughfare><ThoroughfareName>40950 Chapel Way</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94538</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.962723,37.532315,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Rendering geokit/address
+Completed in 11.34674 (0 reqs/sec) | Rendering: 0.00171 (0%) | DB: 0.08082 (0%) | 200 OK [http://localhost/geokit/address]
+
+
+Processing GeokitController#address (for 127.0.0.1 at 2008-10-15 12:43:59) [GET]
+  Session ID: 0bdf76b300ad946339c80aae39820703
+  Parameters: {"action"=>"address", "controller"=>"geokit"}
+  [4;36;1mIfsSchool Load (0.003375)[0m   [0;1mSELECT * FROM ifs_schools LIMIT 30[0m
+  [4;35;1mIfsSchool Columns (0.004989)[0m   [0mSHOW FIELDS FROM ifs_schools[0m
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 39899 Balentine Dr.,  Ste. 335, 94 Newark. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>39899 Balentine Dr.,  Ste. 335, 94 Newark</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>39899 Balentine Dr, Newark, CA 94560, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Newark</LocalityName><Thoroughfare><ThoroughfareName>39899 Balentine Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94560</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.992710,37.521609,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 1515 Webster St, Oakland, CA 94612-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>1515 Webster St, Oakland, CA 94612-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>1515 Webster St, Oakland, CA 94612, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Oakland</LocalityName><Thoroughfare><ThoroughfareName>1515 Webster St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94612</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.268054,37.804625,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address:  Agricultural & Nat., 597 C St., 94 Hayward. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name> Agricultural &amp; Nat., 597 C St., 94 Hayward</name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address:  Agricultural & Nat., 597 C St., 94 Hayward
+Google geocoding. Address: 2400 Fairmont Dr., San Leandro, CA 94578-1005. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2400 Fairmont Dr., San Leandro, CA 94578-1005</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2400 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2400 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.114369,37.713624,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Google geocoding. Address: 2500 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2500 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2500 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2500 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.111939,37.712965,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2400 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2400 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2400 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2400 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.114369,37.713624,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2200 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2200 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2200 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2200 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.121530,37.717012,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2600 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2600 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2600 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2600 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.109384,37.712948,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2100 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2100 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2100 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2100 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.120958,37.712567,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 35725 Cedar Ave., Newark, CA 94560-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>35725 Cedar Ave., Newark, CA 94560-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>35725 Cedar Blvd, Newark, CA 94560, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Newark</LocalityName><Thoroughfare><ThoroughfareName>35725 Cedar Blvd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94560</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.037970,37.550630,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 685 A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>685 A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>685 A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>685 A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.088214,37.671124,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 685 A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>685 A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>685 A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>685 A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.088214,37.671124,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 2200 Fairmont Dr., San Leandro, CA 94578-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>2200 Fairmont Dr., San Leandro, CA 94578-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>2200 Fairmont Dr, San Leandro, CA 94578, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Leandro</LocalityName><Thoroughfare><ThoroughfareName>2200 Fairmont Dr</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94578</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.121530,37.717012,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 35725 Cedar Blvd., Newark, CA 94560-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>35725 Cedar Blvd., Newark, CA 94560-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>35725 Cedar Blvd, Newark, CA 94560, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Newark</LocalityName><Thoroughfare><ThoroughfareName>35725 Cedar Blvd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94560</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.037970,37.550630,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 8151 Village Pkwy., Dublin, CA 94568-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>8151 Village Pkwy., Dublin, CA 94568-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>8151 Village Pkwy, Dublin, CA 94568, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Dublin</LocalityName><Thoroughfare><ThoroughfareName>8151 Village Pkwy</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94568</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.924043,37.720904,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 685 A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>685 A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>685 A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>685 A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.088214,37.671124,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 612 West A St., Hayward, CA 94541-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>612 West A St., Hayward, CA 94541-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>612 W A St, Hayward, CA 94541, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>612 W A St</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94541</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.111913,37.666001,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 7997 Vomac Rd., Dublin, CA 94566-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>7997 Vomac Rd., Dublin, CA 94566-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>7997 Vomac Rd, Dublin, CA 94568, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Dublin</LocalityName><Thoroughfare><ThoroughfareName>7997 Vomac Rd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94568</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.936977,37.714333,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 6925 Chabot Rd., Oakland, CA 94618-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>6925 Chabot Rd., Oakland, CA 94618-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>6925 Chabot Rd, Oakland, CA 94618, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Oakland</LocalityName><Thoroughfare><ThoroughfareName>6925 Chabot Rd</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94618</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.238983,37.851242,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 40950 Chapel Way, Fremont, CA 94538-. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>40950 Chapel Way, Fremont, CA 94538-</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>40950 Chapel Way, Fremont, CA 94538, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Fremont</LocalityName><Thoroughfare><ThoroughfareName>40950 Chapel Way</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94538</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-121.962723,37.532315,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: 313 West Winton Ave., Hayward, CA 94544-1136. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>313 West Winton Ave., Hayward, CA 94544-1136</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>313 W Winton Ave, Hayward, CA 94544, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>Hayward</LocalityName><Thoroughfare><ThoroughfareName>313 W Winton Ave</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>94544</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.097242,37.658103,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: , ,  . Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>, ,  </name><Status><code>602</code><request>geocode</request></Status></Response></kml>
+Google was unable to geocode address: , ,  
+Rendering geokit/address
+Completed in 13.62487 (0 reqs/sec) | Rendering: 0.00058 (0%) | DB: 0.00836 (0%) | 200 OK [http://localhost/geokit/address]
+
+
+Processing GmapController#index (for 127.0.0.1 at 2008-10-26 13:44:55) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"index", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/index
+Rendered templates/aqualicious/_meta (0.05082)
+Rendered templates/aqualicious/_stylesheet (0.01396)
+Rendered templates/aqualicious/_script (0.00153)
+Rendered templates/aqualicious/_navigator (0.02023)
+  [4;36;1mSQL (0.000201)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCnsCounty Load (0.003623)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003459)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.16133)
+Rendered templates/aqualicious/_body_before_content (0.19633)
+Rendered templates/aqualicious/_message (0.00288)
+Rendered templates/aqualicious/_footer (0.00175)
+Rendered templates/aqualicious/_body_after_content (0.00389)
+Completed in 0.39084 (2 reqs/sec) | Rendering: 0.32110 (82%) | DB: 0.00728 (1%) | 200 OK [http://localhost/gmap]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:45:00) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.04312 (23 reqs/sec) | Rendering: 0.04227 (98%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#gmarker (for 127.0.0.1 at 2008-10-26 13:45:17) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"gmarker", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/gmarker
+Rendered templates/aqualicious/_meta (0.00013)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.003712)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003376)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02010)
+Rendered templates/aqualicious/_body_before_content (0.02081)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00044)
+Completed in 0.35361 (2 reqs/sec) | Rendering: 0.34550 (97%) | DB: 0.00709 (2%) | 200 OK [http://localhost/gmap/gmarker]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:45:21) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00499 (200 reqs/sec) | Rendering: 0.00416 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:45:24) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00542 (184 reqs/sec) | Rendering: 0.00439 (80%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:45:26) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00498 (200 reqs/sec) | Rendering: 0.00410 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:45:28) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00752 (133 reqs/sec) | Rendering: 0.00618 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#gmarker (for 127.0.0.1 at 2008-10-26 13:45:29) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"gmarker", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/gmarker
+Rendered templates/aqualicious/_meta (0.00008)
+Rendered templates/aqualicious/_stylesheet (0.00009)
+Rendered templates/aqualicious/_script (0.00008)
+Rendered templates/aqualicious/_navigator (0.00009)
+  [4;35;1mCnsCounty Load (0.003678)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.004188)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.01950)
+Rendered templates/aqualicious/_body_before_content (0.02002)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00044)
+Completed in 0.02399 (41 reqs/sec) | Rendering: 0.01505 (62%) | DB: 0.00787 (32%) | 200 OK [http://localhost/gmap/gmarker]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:45:34) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00491 (203 reqs/sec) | Rendering: 0.00403 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#gmarker (for 127.0.0.1 at 2008-10-26 13:48:04) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"gmarker", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/gmarker
+Rendered templates/aqualicious/_meta (0.00008)
+Rendered templates/aqualicious/_stylesheet (0.00009)
+Rendered templates/aqualicious/_script (0.00008)
+Rendered templates/aqualicious/_navigator (0.00009)
+  [4;35;1mCnsCounty Load (0.003751)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003504)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.08421)
+Rendered templates/aqualicious/_body_before_content (0.08471)
+Rendered templates/aqualicious/_message (0.00013)
+Rendered templates/aqualicious/_footer (0.00009)
+Rendered templates/aqualicious/_body_after_content (0.00039)
+Completed in 0.08846 (11 reqs/sec) | Rendering: 0.08019 (90%) | DB: 0.00726 (8%) | 200 OK [http://localhost/gmap/gmarker]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 13:49:22) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00514 (194 reqs/sec) | Rendering: 0.00426 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#custom (for 127.0.0.1 at 2008-10-26 15:33:21) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"custom", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/custom
+Rendered templates/aqualicious/_meta (0.00012)
+Rendered templates/aqualicious/_stylesheet (0.00014)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.004528)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003688)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02178)
+Rendered templates/aqualicious/_body_before_content (0.02245)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00044)
+Completed in 0.04783 (20 reqs/sec) | Rendering: 0.03835 (80%) | DB: 0.00822 (17%) | 200 OK [http://localhost/gmap/custom]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:33:24) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00496 (201 reqs/sec) | Rendering: 0.00413 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#rjs (for 127.0.0.1 at 2008-10-26 15:33:34) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"rjs", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/rjs
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47gmap47rjs46rhtml at script/../config/../app/views/gmap/rjs.rhtml:13)
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47gmap47rjs46rhtml at script/../config/../app/views/gmap/rjs.rhtml:17)
+Rendered templates/aqualicious/_meta (0.00011)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00012)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.005164)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003131)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02131)
+Rendered templates/aqualicious/_body_before_content (0.02198)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00010)
+Rendered templates/aqualicious/_body_after_content (0.00039)
+Completed in 0.05221 (19 reqs/sec) | Rendering: 0.04290 (82%) | DB: 0.00830 (15%) | 200 OK [http://localhost/gmap/rjs]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:33:37) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00498 (200 reqs/sec) | Rendering: 0.00415 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#add_point (for 127.0.0.1 at 2008-10-26 15:33:49) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"add_point", "controller"=>"gmap"}
+Rendering gmap/add_point
+Completed in 0.04158 (24 reqs/sec) | Rendering: 0.04067 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/add_point]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:33:58) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00590 (169 reqs/sec) | Rendering: 0.00501 (84%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#rjs_custom (for 127.0.0.1 at 2008-10-26 15:34:12) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"rjs_custom", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/rjs_custom
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47gmap47rjs_custom46rhtml at script/../config/../app/views/gmap/rjs_custom.rhtml:13)
+Rendered templates/aqualicious/_meta (0.00014)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.004578)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003700)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02119)
+Rendered templates/aqualicious/_body_before_content (0.02189)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00046)
+Completed in 0.09802 (10 reqs/sec) | Rendering: 0.08861 (90%) | DB: 0.00828 (8%) | 200 OK [http://localhost/gmap/rjs_custom]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:34:14) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00499 (200 reqs/sec) | Rendering: 0.00414 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:34:17) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00501 (199 reqs/sec) | Rendering: 0.00415 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#add_custom_point (for 127.0.0.1 at 2008-10-26 15:34:28) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"add_custom_point", "controller"=>"gmap"}
+Rendering gmap/add_custom_point
+Completed in 0.07215 (13 reqs/sec) | Rendering: 0.07126 (98%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/add_custom_point]
+
+
+Processing GmapController#gmarker_group (for 127.0.0.1 at 2008-10-26 15:34:39) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"gmarker_group", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/gmarker_group
+Rendered templates/aqualicious/_meta (0.00017)
+Rendered templates/aqualicious/_stylesheet (0.00015)
+Rendered templates/aqualicious/_script (0.00013)
+Rendered templates/aqualicious/_navigator (0.00013)
+  [4;35;1mCnsCounty Load (0.004690)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003646)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02372)
+Rendered templates/aqualicious/_body_before_content (0.02474)
+Rendered templates/aqualicious/_message (0.00015)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00043)
+Completed in 0.11166 (8 reqs/sec) | Rendering: 0.10223 (91%) | DB: 0.00834 (7%) | 200 OK [http://localhost/gmap/gmarker_group]
+
+
+Processing GmapController#polyline (for 127.0.0.1 at 2008-10-26 15:35:00) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"polyline", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/polyline
+Rendered templates/aqualicious/_meta (0.00011)
+Rendered templates/aqualicious/_stylesheet (0.00014)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.005216)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003614)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02298)
+Rendered templates/aqualicious/_body_before_content (0.02373)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00043)
+Completed in 0.10879 (9 reqs/sec) | Rendering: 0.09892 (90%) | DB: 0.00883 (8%) | 200 OK [http://localhost/gmap/polyline]
+
+
+Processing GmapController#polygon (for 127.0.0.1 at 2008-10-26 15:35:10) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"polygon", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/polygon
+Rendered templates/aqualicious/_meta (0.00013)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00014)
+  [4;35;1mCnsCounty Load (0.004621)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003638)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02230)
+Rendered templates/aqualicious/_body_before_content (0.02310)
+Rendered templates/aqualicious/_message (0.00013)
+Rendered templates/aqualicious/_footer (0.00010)
+Rendered templates/aqualicious/_body_after_content (0.00039)
+Completed in 0.09439 (10 reqs/sec) | Rendering: 0.08512 (90%) | DB: 0.00826 (8%) | 200 OK [http://localhost/gmap/polygon]
+
+
+Processing GmapController#cluster (for 127.0.0.1 at 2008-10-26 15:35:20) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"cluster", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/cluster
+Rendered templates/aqualicious/_meta (0.00012)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.005209)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003162)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02412)
+Rendered templates/aqualicious/_body_before_content (0.02482)
+Rendered templates/aqualicious/_message (0.00015)
+Rendered templates/aqualicious/_footer (0.00018)
+Rendered templates/aqualicious/_body_after_content (0.00052)
+Completed in 0.09659 (10 reqs/sec) | Rendering: 0.02296 (23%) | DB: 0.00837 (8%) | 200 OK [http://localhost/gmap/cluster]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:35:23) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00712 (140 reqs/sec) | Rendering: 0.00583 (81%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#manager (for 127.0.0.1 at 2008-10-26 15:35:34) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"manager", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/manager
+Rendered templates/aqualicious/_meta (0.00020)
+Rendered templates/aqualicious/_stylesheet (0.00012)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.003696)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003349)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.07670)
+Rendered templates/aqualicious/_body_before_content (0.07739)
+Rendered templates/aqualicious/_message (0.00014)
+Rendered templates/aqualicious/_footer (0.00011)
+Rendered templates/aqualicious/_body_after_content (0.00045)
+Completed in 0.15163 (6 reqs/sec) | Rendering: 0.07897 (52%) | DB: 0.00705 (4%) | 200 OK [http://localhost/gmap/manager]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:35:40) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00497 (201 reqs/sec) | Rendering: 0.00408 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#geocoding (for 127.0.0.1 at 2008-10-26 15:35:48) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"geocoding", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/geocoding
+Rendered templates/aqualicious/_meta (0.00011)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00011)
+Rendered templates/aqualicious/_navigator (0.00012)
+  [4;35;1mCnsCounty Load (0.005236)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.004473)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02503)
+Rendered templates/aqualicious/_body_before_content (0.02570)
+Rendered templates/aqualicious/_message (0.00011)
+Rendered templates/aqualicious/_footer (0.00008)
+Rendered templates/aqualicious/_body_after_content (0.00031)
+Completed in 0.18014 (5 reqs/sec) | Rendering: 0.01971 (10%) | DB: 0.00971 (5%) | 200 OK [http://localhost/gmap/geocoding]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:35:51) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00503 (198 reqs/sec) | Rendering: 0.00420 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GmapController#earthquake_rss (for 127.0.0.1 at 2008-10-26 15:36:15) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"earthquake_rss", "controller"=>"gmap"}
+Completed in 0.06594 (15 reqs/sec) | Rendering: 0.00015 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/earthquake_rss]
+
+
+Processing GmapController#proxy (for 127.0.0.1 at 2008-10-26 15:36:22) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"proxy", "controller"=>"gmap"}
+DEPRECATION WARNING: @params is deprecated! Call params.[] instead of @params.[]. Args: [:q]  See http://www.rubyonrails.org/deprecation for details. (called from proxy at ./script/../config/../app/controllers/gmap_controller.rb:166)
+
+
+URI::InvalidURIError (bad URI(is not URI?): ):
+    /usr/local/lib/ruby/1.8/uri/common.rb:436:in `split'
+    /usr/local/lib/ruby/1.8/uri/common.rb:485:in `parse'
+    .//app/controllers/gmap_controller.rb:166:in `proxy'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing GmapController#georss (for 127.0.0.1 at 2008-10-26 15:36:29) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"georss", "controller"=>"gmap"}
+Rendering  within layouts/gmap
+Rendering gmap/georss
+Rendered templates/aqualicious/_meta (0.00013)
+Rendered templates/aqualicious/_stylesheet (0.00013)
+Rendered templates/aqualicious/_script (0.00012)
+Rendered templates/aqualicious/_navigator (0.00015)
+  [4;35;1mCnsCounty Load (0.004771)[0m   [0mSELECT * FROM cns_counties ORDER BY county_name[0m
+  [4;36;1mCnsCounty Columns (0.003143)[0m   [0;1mSHOW FIELDS FROM cns_counties[0m
+DEPRECATION WARNING: end_form_tag is deprecated and will be removed from Rails 2.0  See http://www.rubyonrails.org/deprecation for details. (called from _run_rhtml_47app47views47templates47aqualicious47gmap47_sidebar46rhtml at script/../config/../app/views/templates/aqualicious/gmap/_sidebar.rhtml:22)
+Rendered templates/aqualicious/gmap/_sidebar (0.02149)
+Rendered templates/aqualicious/_body_before_content (0.02228)
+Rendered templates/aqualicious/_message (0.00016)
+Rendered templates/aqualicious/_footer (0.00008)
+Rendered templates/aqualicious/_body_after_content (0.00032)
+Completed in 0.05172 (19 reqs/sec) | Rendering: 0.04193 (81%) | DB: 0.00791 (15%) | 200 OK [http://localhost/gmap/georss]
+
+
+Processing GmapController#earthquake_rss (for 127.0.0.1 at 2008-10-26 15:36:30) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"earthquake_rss", "controller"=>"gmap"}
+Completed in 0.28698 (3 reqs/sec) | Rendering: 0.00017 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/earthquake_rss]
+
+
+Processing GmapController#proxy (for 127.0.0.1 at 2008-10-26 15:36:30) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"proxy", "q"=>"http://earthquake.usgs.gov/eqcenter/recenteqsww/catalogs/eqs7day-M5.xml", "controller"=>"gmap"}
+DEPRECATION WARNING: @params is deprecated! Call params.[] instead of @params.[]. Args: [:q]  See http://www.rubyonrails.org/deprecation for details. (called from proxy at ./script/../config/../app/controllers/gmap_controller.rb:166)
+Completed in 0.04792 (20 reqs/sec) | Rendering: 0.00011 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/proxy?q=http%3A%2F%2Fearthquake.usgs.gov%2Feqcenter%2Frecenteqsww%2Fcatalogs%2Feqs7day-M5.xml]
+
+
+Processing GmapController#earthquake_rss (for 127.0.0.1 at 2008-10-26 15:36:30) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"earthquake_rss", "controller"=>"gmap"}
+Completed in 0.04085 (24 reqs/sec) | Rendering: 0.00016 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/earthquake_rss]
+
+
+Processing GmapController#proxy (for 127.0.0.1 at 2008-10-26 15:36:30) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"proxy", "q"=>"http://earthquake.usgs.gov/eqcenter/recenteqsww/catalogs/eqs7day-M5.xml", "controller"=>"gmap"}
+DEPRECATION WARNING: @params is deprecated! Call params.[] instead of @params.[]. Args: [:q]  See http://www.rubyonrails.org/deprecation for details. (called from proxy at ./script/../config/../app/controllers/gmap_controller.rb:166)
+Completed in 0.03998 (25 reqs/sec) | Rendering: 0.00018 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/proxy?q=http%3A%2F%2Fearthquake.usgs.gov%2Feqcenter%2Frecenteqsww%2Fcatalogs%2Feqs7day-M5.xml]
+
+
+Processing GmapController#clear (for 127.0.0.1 at 2008-10-26 15:36:37) [POST]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"clear", "controller"=>"gmap"}
+Rendering gmap/clear
+Completed in 0.00511 (195 reqs/sec) | Rendering: 0.00420 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/gmap/clear]
+
+
+Processing GeokitController#index (for 127.0.0.1 at 2008-10-26 15:37:22) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"index", "controller"=>"geokit"}
+  [4;35;1mIfsSchool Load (1.524529)[0m   [0mSELECT *, (ACOS(least(1,COS(0.674695908294142)*COS(-2.11196266161927)*COS(RADIANS(ifs_schools.lat))*COS(RADIANS(ifs_schools.lng))+
+ COS(0.674695908294142)*SIN(-2.11196266161927)*COS(RADIANS(ifs_schools.lat))*SIN(RADIANS(ifs_schools.lng))+
+ SIN(0.674695908294142)*SIN(RADIANS(ifs_schools.lat))))*3963.19)
+ AS distance FROM ifs_schools ORDER BY distance asc[0m
+
+
+NoMethodError (undefined method `school' for #<IfsSchool:0x30f6fc4>):
+    /usr/local/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1860:in `method_missing'
+    .//app/controllers/geokit_controller.rb:12:in `index'
+    .//app/controllers/geokit_controller.rb:11:in `upto'
+    .//app/controllers/geokit_controller.rb:11:in `index'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing GeokitController#geocode (for 127.0.0.1 at 2008-10-26 15:37:33) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"geocode", "controller"=>"geokit"}
+Google geocoding. Address: 1 Pennsylvania Ave, Washington, DC 20500. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>1 Pennsylvania Ave, Washington, DC 20500</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>1 Pennsylvania Ave NW, Washington, DC 20037, USA</address><AddressDetails Accuracy="8" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>DC</AdministrativeAreaName><Locality><LocalityName>Washington</LocalityName><Thoroughfare><ThoroughfareName>1 Pennsylvania Ave NW</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>20037</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-77.049696,38.902990,0</coordinates></Point></Placemark></Response></kml>
+
+
+ActionController::MissingTemplate (Missing template script/../config/../app/views/geokit/geocode.rhtml):
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1205:in `assert_existence_of_template_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:804:in `render_file'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:711:in `render_with_no_layout'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:256:in `render_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1096:in `perform_action_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/local/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /usr/local/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing GeokitController#memory (for 127.0.0.1 at 2008-10-26 15:37:39) [GET]
+  Session ID: a859a031e7a2781a1d39c62e7f82ffe9
+  Parameters: {"action"=>"memory", "controller"=>"geokit"}
+Google geocoding. Address: San Francisco,CA. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>San Francisco,CA</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>San Francisco, CA, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>CA</AdministrativeAreaName><Locality><LocalityName>San Francisco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-122.419204,37.775196,0</coordinates></Point></Placemark></Response></kml>
+Google geocoding. Address: Irving,TX. Result: <?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://earth.google.com/kml/2.0"><Response><name>Irving,TX</name><Status><code>200</code><request>geocode</request></Status><Placemark id="p1"><address>Irving, TX, USA</address><AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>TX</AdministrativeAreaName><Locality><LocalityName>Irving</LocalityName></Locality></AdministrativeArea></Country></AddressDetails><Point><coordinates>-96.959085,32.844223,0</coordinates></Point></Placemark></Response></kml>
+Rendering geokit/memory
+Completed in 0.24353 (4 reqs/sec) | Rendering: 0.00097 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/geokit/memory]

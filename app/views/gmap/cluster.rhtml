@@ -1,0 +1,12 @@
+<html>
+<head><title>Test</title>
+        <%= GMap.header %>
+		<%= javascript_include_tag("clusterer") %>
+        <%= @map.to_html %>
+</head>
+<body>
+				<%= @map.div(:width => 670, :height => 550) %>
+</body>
+</html>
+
+

@@ -1,0 +1,68 @@
+<%= hidden_field_tag :html_type, 'ajax' %>
+
+<%
+	ajax_params="'county_name='+ escape($('county_name').value) " +
+			"+ '&html_type='+ escape($('html_type').value)" + 
+			"+ '&stype='+ escape($('stype').value)" 
+
+%>
+
+<!------------------- County ---------------------->
+County: <br />
+	<%
+		counties=CnsCounty.find(:all, :order=>'county_name')
+		county_names=[]
+		for county in counties
+			county_names << county.county_name
+		end
+	%>
+	<%= select_tag(:county_name, options_for_select(county_names.uniq), 
+							:onchange=>remote_function(
+								:url =>{:controller => @app_name.downcase, :action => :refresh_county},
+								:with => ajax_params)) 
+	%>
+<br /><br />
+
+<!------------------- School Type ---------------------->
+School Type:<br />
+	<%= select_tag(:stype, options_for_select(['H', 'M', 'E']), 
+							:onchange=>remote_function(
+								:url =>{:controller => @app_name.downcase, :action => :refresh_county},
+								:with => ajax_params)) 
+	%>
+<br /><br />
+
+
+
+Display:<br />
+<%= radio_button_tag "marker", "checked", false, :id => 'district', 
+							:onchange => remote_function(
+										:url =>{:controller => @app_name.downcase, :action => :refresh_county},
+										:with => ajax_params + "+ '&district='+ escape($('district').value)" ) %>Show All Districts <br />
+										
+<%= radio_button_tag "marker","checked", false,:id => 'county',
+							:onchange => remote_function(
+										:url =>{:controller => @app_name.downcase, :action => :refresh_county},
+										:with => ajax_params + "+ '&county='+ escape($('county').value)" ) %>Schools in County Top-10<br />
+	
+<%= radio_button_tag "marker","checked", false,:id => 'state',
+							:onchange => remote_function(
+										:url =>{:controller => @app_name.downcase, :action => :refresh_county},
+										:with => ajax_params + "+ '&state='+ escape($('state').value)" ) %>Schools in State Top-50<br />
+<br />
+<!--		
+Real Estate Zipcode:<br />
+<%
+	price_ranges=['< 300k', '300+k ~ 500k', '500+k ~ 750k', '750+k ~ 1m', '1m+ ~ 2m', '> 2m']
+%>
+
+<%= select_tag(:price_tag, options_for_select(price_ranges), 
+						:onchange=>remote_function(
+							:url =>{:controller => @app_name.downcase, :action => :refresh_county},
+							:with => ajax_params)) 
+%> <br /><br />
+-->		
+<hr>
+
+<div id='sidebar_ajax'>
+</div>		

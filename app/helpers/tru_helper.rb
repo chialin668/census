@@ -1,0 +1,2 @@
+module TruHelper
+end

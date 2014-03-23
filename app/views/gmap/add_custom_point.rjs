@@ -1,0 +1,10 @@
+page << @map.add_overlay(@marker)
+
+
+icon1 = Variable.new("icon1")
+page << icon1    
+page <<    @map.add_overlay( GMarker.new([37.330408, -122.056942], 
+                                  :icon=>icon1, 
+                                  :title => "Marker-1", 
+                                  :info_window => "Marker 1!"))
+                                  

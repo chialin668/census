@@ -1,0 +1,11 @@
+
+@map = Variable.new("map")
+page << @map.clear_overlays
+
+page << @map.set_center(GLatLng.new([37.320644, -122.021325]), 12)
+page << @map.add_overlay(GMarker.new([37.320644, -122.021325], :title => "Hello again!", :draggable => true))
+
+page << @map.add_overlay(GPolygon.new([[37.292875, -122.009581],[37.294584, -122.037276],[37.34013, -122.059498],[37.320644, -122.021325],
+                          [37.292875, -122.009581]],
+                          "#ff0000", 5, 0.5,
+                            "#00ff00", 0.3))

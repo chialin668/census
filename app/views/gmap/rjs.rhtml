@@ -1,0 +1,22 @@
+<html><head><title>Test</title>
+    <%= GMap.header %>
+    <%= @map.to_html %>
+
+</head>
+<body>
+	<%= @map.div(:width => 670, :height => 550) %>
+
+<br />
+
+<%= form_remote_tag :url => {:controller => 'gmap', :action => 'add_point'}, :class => "headerForm"%>
+	<%= submit_tag "Add Point" %>
+<%= end_form_tag %>
+<br />
+<%= form_remote_tag :url => {:controller => 'gmap', :action => 'clear'}, :class => "headerForm"%>
+	<%= submit_tag "Clear, Center, and Add new stuffs" %>
+<%= end_form_tag %>
+
+</body>
+</html>
+
+

@@ -1,0 +1,11 @@
+ <html>
+<head><title>Testing GeoRss</title>
+    <%= GMap.header(:with_vml => false) %>
+    <%= javascript_include_tag("geoRssOverlay") %>
+    <%= @map.header_width_height(600,400) %>
+    <%= @map.to_html %>
+</head>
+<body>
+        <%= @map.div %>
+</body>
+</html>

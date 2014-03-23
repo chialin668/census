@@ -1,0 +1,157 @@
+
+
+scale_level=12
+
+url_base='http://www.ifansee.com'
+
+@map = Variable.new("map")
+page << @map.clear_overlays
+
+#
+# District boundary
+#
+for polygon in @county_polygons
+  page << @map.add_overlay(GPolygon.new(polygon, "#0000ff", 5, 0.3, "#ffffff", 0.1))
+end
+
+for polygon in @district_polygons
+  page << @map.add_overlay(GPolygon.new(polygon, "#ff0000", 5, 0.3, "#00ff00", 0.1))
+end
+
+# 
+# for the map center: avg of all markers
+#
+geo_count=0
+sum_lat=0.0
+sum_lng=0.0
+geopoints=[]
+
+#
+# markers
+#
+icon_blank = Variable.new("icon_blank");                page << icon_blank
+icon_blank_red = Variable.new("icon_blank_red");        page << icon_blank_red
+icon_blank_blue = Variable.new("icon_blank_blue");      page << icon_blank_blue
+icon_blank_green = Variable.new("icon_blank_green");    page << icon_blank_green
+icon_blank_yellow = Variable.new("icon_blank_yellow");  page << icon_blank_yellow
+
+icons=[]
+icons_red=[]
+icons_green=[]
+icons_blue=[]
+icons_yellow=[]
+1.upto(50) { |i| icon = Variable.new("icon#{i}"); icons << icon; page << icon }
+1.upto(50) { |i| icon = Variable.new("icon_red#{i}"); icons_red << icon; page << icon }
+1.upto(50) { |i| icon = Variable.new("icon_blue#{i}"); icons_blue << icon; page << icon }
+1.upto(50) { |i| icon = Variable.new("icon_green#{i}"); icons_green << icon; page << icon }
+1.upto(50) { |i| icon = Variable.new("icon_yellow#{i}"); icons_yellow << icon; page << icon }
+
+
+for school in @schools
+
+#    next if not @cds2school[school.cds]
+    star_school = @cds2school[school.cds]
+
+    rank = star_school.district_rank if @mtype=='school'
+    rank = star_school.county_rank if @mtype=='county'
+    rank = star_school.state_rank if @mtype=='state'
+
+    if star_school.api_score
+      icon = icons_red[rank-1] if star_school.api_score >=900
+      icon = icons_blue[rank-1] if star_school.api_score >=800 and star_school.api_score <900
+      icon = icons_green[rank-1] if star_school.api_score >=700 and star_school.api_score <800
+      icon = icons_yellow[rank-1] if star_school.api_score < 700
+    else
+      icon = icon_blank # no api score 
+    end  
+    
+    page << @map.add_overlay(GMarker.new([school.lat.to_f, school.lng.to_f],
+            :icon => icon,
+            :info_window => 
+              "#{school.school_name}",
+            :title => school.school_name))
+
+end
+
+#
+# sidebar 
+#
+html=''
+rank2school={}
+for school in @schools
+  next if not @cds2school[school.cds]
+  if @mtype=='school'
+    rank = @cds2school[school.cds].district_rank 
+  elsif  @mtype=='county'
+    rank = @cds2school[school.cds].county_rank
+  elsif  @mtype=='state'
+    rank = @cds2school[school.cds].state_rank
+  end
+  rank2school[rank] = school
+end
+
+html += '<table>'
+schools=rank2school.sort
+for school in schools
+  
+  cds = school[1].cds
+  if @cds2school[cds]
+    html += '<tr>'
+    html += "<td><font size='-2'>#{school[0]}</font></td>"
+    html += "<td><font size='-2'>#{school[1].school_name}</font></td>"
+    html += '</tr>'
+  end
+end    
+html += '</table>'
+
+page['sidebar_ajax'].replace_html(html)
+  
+
+page << @map.set_center(GLatLng.new(@map_center), scale_level)  
+
+=begin
+ajax_params="'county_name='+ escape($('county_name').value) " +
+    "+ '&district_name='+ escape($('district_name').value) " +
+    "+ '&html_type='+ escape($('html_type').value)" + 
+    "+ '&stype='+ escape($('stype').value)" 
+page << select_tag(:district_name, options_for_select(@district_name_array.uniq), 
+              :onchange=>remote_function(
+                :url =>{:controller => @app_name.downcase, :action => :refresh_district},
+                :with => ajax_params)) 
+
+=end
+
+
+#
+# Legend
+#
+html=%Q(
+  <img width=15 height=25 src='/images/icons/0-99/blank.png'><font size='-2'>No API score</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDYellowIcons/blank.png'><font size='-2'>API&#60;700</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDGreenIcons/blank.png'><font size='-2'>700&#60;API&#60;800</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDBlueIcons/blank.png'><font size='-2'>800&#60;API&#60;900</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDRedIcons/blank.png'><font size='-2'>API>900</font> 
+)
+page['legend_ajax'].replace_html(html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

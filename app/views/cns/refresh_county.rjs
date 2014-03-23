@@ -1,0 +1,322 @@
+
+=begin
+
+Issues:
+  Mendocino and Inyo, H, Top-10: not centered
+  Mono, H, top-10: only 1 and 8s?
+  Trinity shows only 1,2,3,5
+  sonoma
+  mercede, mendocino: scale level is not correct
+  state top-10/top-50 only shows kennedy but not miller on sidebar (because of hash)
+  eldorado doen't have all marks on top-10
+=end
+
+url_base='http://www.ifansee.com'
+
+@map = Variable.new("map")
+page << @map.clear_overlays
+
+#
+# County boundary
+#
+for polygon in @county_polygons
+  page << @map.add_overlay(GPolygon.new(polygon, "#ff0000", 5, 0.3, "#00ff00", 0.1))
+end
+
+# 
+# for the map center: avg of all markers
+#
+geo_count=0
+sum_lat=0.0
+sum_lng=0.0
+geopoints=[]
+
+#
+# markers
+#
+icon_blank = Variable.new("icon_blank");                page << icon_blank
+#icon_blank_red = Variable.new("icon_blank_red");        page << icon_blank_red
+#icon_blank_blue = Variable.new("icon_blank_blue");      page << icon_blank_blue
+#icon_blank_green = Variable.new("icon_blank_green");    page << icon_blank_green
+#icon_blank_yellow = Variable.new("icon_blank_yellow");  page << icon_blank_yellow
+
+icons=[]
+icons_red = init_icons(page, 'red', 50)
+icons_blue = init_icons(page, 'blue', 50)
+icons_green = init_icons(page, 'green', 50)
+icons_yellow = init_icons(page, 'yellow', 50)
+@color2icons={:red => icons_red, :blue => icons_blue, :green => icons_green, :yellow => icons_yellow}
+
+
+#1.upto(50) { |i| icon = Variable.new("icon#{i}"); icons << icon; page << icon }
+#1.upto(50) { |i| icon = Variable.new("icon_red#{i}"); icons_red << icon; page << icon }
+#1.upto(50) { |i| icon = Variable.new("icon_blue#{i}"); icons_blue << icon; page << icon }
+#1.upto(50) { |i| icon = Variable.new("icon_green#{i}"); icons_green << icon; page << icon }
+#1.upto(50) { |i| icon = Variable.new("icon_yellow#{i}"); icons_yellow << icon; page << icon }
+
+
+#
+# district markers
+#
+if @mtype=='district'
+
+    # sort district by APIs
+    sorted_districts = @district2api.sort {|a, b| b[1].district_api <=> a[1].district_api}
+    district2rank = {}
+    rank2district = {}
+    rank = 1
+    for dist in sorted_districts
+      district_name = dist[0]
+      district = dist[1]
+      district2rank[district_name] = rank
+      rank2district[rank] = district_name
+      rank += 1
+    end
+    
+
+  for district in @districts
+  
+    # NOTE: column size is 30 on api_summaries
+    avg_api = @district2api[district.district_name[0,30]] ? @district2api[district.district_name[0,30]].district_api : '0'
+    
+    if district.lat.to_f != 0 and district.lng.to_f != 0
+      geopoints << [district.lat.to_f, district.lng.to_f]
+      sum_lat += district.lat.to_f
+      sum_lng += district.lng.to_f
+      geo_count += 1
+    end
+=begin    
+    rank = district2rank[district.district_name]
+puts district.district_name
+puts rank
+puts avg_api.to_i
+    if rank 
+      icon = get_icon(rank, avg_api.to_i)
+    else
+      icon = icon_blank # no api score 
+      puts '1111111111111111111111111111111111111111111111'
+    end
+=end     
+
+    if rank 
+      icon = icons_red[rank-1]     if avg_api.to_i >= 900
+      icon = icons_blue[rank-1]   if avg_api.to_i >= 800 and avg_api.to_i < 900
+      icon = icons_green[rank-1]    if avg_api.to_i >= 700 and avg_api.to_i < 800
+      icon = icons_yellow[rank-1]  if avg_api.to_i >= 0   and avg_api.to_i < 700
+    else
+      icon = icon_blank # no api score 
+    end
+
+
+    page << @map.add_overlay(GMarker.new([district.lat.to_f, district.lng.to_f],
+            :icon => icon,
+            :info_window => 
+              "District: <a href='/cns/district?stype=#{@stype}&county_name=#{district.county_name}&district_name=#{district.district_name}'>#{district.district_name}</a><br />" + 
+              "Avg. API Score: #{avg_api} <br />" + 
+              "Ranks:(-/-/-) <br />",
+            :title => district.district_name))
+  end
+
+
+elsif @mtype=='county' or @mtype=='state'
+
+  for school in @schools
+  
+    next if not @cds2school[school.cds]  # school not in the API rank
+    
+    if @mtype=='county'
+      rank = @cds2school[school.cds].county_rank 
+    elsif  @mtype=='state'
+      rank = @cds2school[school.cds].state_rank
+    end
+    
+    school_name="<a href='#{url_base}/school/api_score?" +
+                  "year=#{@current_year}&" +
+                  "school_type=#{@stype}&" + 
+                  "school_code=#{@cds2school[school.cds].school_code}&" +
+                  "district_code=#{@cds2school[school.cds].district_code}&" + 
+                  "county_code=#{@cds2school[school.cds].county_code}'>#{school.school_name}</a><br />"
+    info = "#{school_name}" +
+          "Api Score: #{@cds2school[school.cds].api_score} <br />" + 
+          "County Rank: #{@cds2school[school.cds].county_rank} <br />" + 
+          "State Rank: #{@cds2school[school.cds].state_rank} <br /><br/>"
+          
+    # for geo center
+    if school.lat.to_f != 0 and school.lng.to_f != 0
+      geopoints << [school.lat.to_f, school.lng.to_f]
+      sum_lat += school.lat.to_f
+      sum_lng += school.lng.to_f
+      geo_count += 1
+    end
+      
+    if @cds2school[school.cds].api_score
+      icon = icons_red[rank-1] if @cds2school[school.cds].api_score >=900
+      icon = icons_blue[rank-1] if @cds2school[school.cds].api_score >=800 and @cds2school[school.cds].api_score <900
+      icon = icons_green[rank-1] if @cds2school[school.cds].api_score >=700 and @cds2school[school.cds].api_score <800
+      icon = icons_yellow[rank-1] if @cds2school[school.cds].api_score < 700
+    else
+      icon = icon_blank # no api score 
+    end  
+    page << @map.add_overlay(GMarker.new([school.lat.to_f, school.lng.to_f], 
+                                  :icon => icon,
+                                  :title => school.school_name,
+                                  :info_window => info))
+  end
+
+end
+
+#
+# Find the scale level
+#
+scale_level=9  # default level
+
+if geopoints.size > 0
+  lats=[]; lngs=[]
+  for g in geopoints
+    lats << g[0]
+    lngs << g[1]
+  end
+  lat_diff = lats.max - lats.min
+  lng_diff = lngs.max - lngs.min
+  
+  0.upto(10) do |i|  # Will be too close from 11 to 17
+    (boundary_lat, boundary_lng) = @gpoint2scale[i]
+    break if (boundary_lat-lat_diff<0 and boundary_lng-lng_diff<0)
+    scale_level = i
+  end  
+  #scale_level -= 1
+end
+
+
+#
+# Set the map center
+#
+if sum_lat and sum_lng and sum_lat !=0 and sum_lng != 0
+  # center = avg. lat and lng
+  page << @map.set_center(GLatLng.new([sum_lat/geo_count, sum_lng/geo_count]), scale_level) 
+else
+  # default county center (from db)
+  page << @map.set_center(GLatLng.new(@map_center), scale_level)  
+end
+
+###################################################################################################
+
+#
+# Informaion on the sidebar
+#
+html =''
+if @mtype=='district'
+
+  
+  html += '<h3>Districts</h3>'
+  1.upto(rank2district.size) do |rank|
+     "#{rank}: #{rank2district[rank]}<br />"
+  end
+  
+  
+  for district in @districts
+    # NOTE: column size is 30 on api_sumies
+    if @district2api[district.district_name[0,30]] 
+      district_code = @district2api[district.district_name[0,30]].district_code 
+      county_code = @district2api[district.district_name[0,30]].county_code 
+  
+      district_name = "<a href='#{url_base}/district/api_score?" + 
+                    "year=2007&school_type=#{@stype}&" +
+                    "school_code=0&" +
+                    "district_code=#{district_code}&" +
+                    "county_code=#{county_code}'>" +
+                    "#{district.district_name}</a>"
+    else                    
+      district_name = district.district_name
+    end   
+
+    avg_api = @district2api[district.district_name] ? @district2api[district.district_name].district_api : '' # need to display '' than 0 on info window
+=begin
+    img_src = "<img width=5 height=5 src='/images/icons/markers/smallSQRedIcons/blank.png'>"     if avg_api.to_i >= 900
+    img_src = "<img width=5 height=5 src='/images/icons/markers/smallSQBlueIcons/blank.png'>"    if avg_api.to_i >= 800 and avg_api.to_i < 900
+    img_src = "<img width=5 height=5 src='/images/icons/markers/smallSQGreenIcons/blank.png'>"   if avg_api.to_i >= 700 and avg_api.to_i < 800
+    img_src = "<img width=5 height=5 src='/images/icons/markers/smallSQYellowIcons/blank.png'>"  if avg_api.to_i >= 0   and avg_api.to_i < 700
+    img_src = ""         if avg_api.to_i == 0 
+=end
+    #html += "#{img_src} <font size='-2'>#{district_name}</font> <br />"
+    html += "<font size='-2'>#{district_name}</font> <br />"
+  end
+
+  page['sidebar_ajax'].replace_html(html)
+
+elsif @mtype=='county' or @mtype=='state'
+
+  rank2school={}
+  for school in @schools
+    next if not @cds2school[school.cds]
+    if @mtype=='county'
+      rank = @cds2school[school.cds].county_rank 
+    elsif  @mtype=='state'
+      rank = @cds2school[school.cds].state_rank
+    end
+    rank2school[rank] = school
+  end
+  
+  html += '<h3>School Rank:</h3>'
+  html += '<table>'
+  schools=rank2school.sort
+  for school in schools
+    
+    cds = school[1].cds
+    if @cds2school[cds]
+      school_name="<a href='#{url_base}/school/api_score?year=#{@current_year}&" +
+                "school_type=#{@stype}&school_code=#{@cds2school[cds].school_code}&" +
+                "district_code=#{@cds2school[cds].district_code}&" + 
+                "county_code=#{@cds2school[cds].county_code}'>#{school[1].school_name}</a>\n"
+    else
+      school_name = school[1].school_name
+    end
+
+    html += "<tr>\n"
+    html += "<td aligh='right'><font size='-2'>#{school[0]}:</font></td><td><font size='-2'>#{school_name}</font> <br /></td>\n"
+    html += "</tr>\n"
+  end
+  html += "</table>\n"
+
+  if @mtype=='county'
+    url = "#{url_base}/api/counties?year=#{@current_year}&school_type=#{@stype}&county_name=#{@county_name}"
+    html += "<a href='#{url}'>Full list...</a>"
+  elsif @mtype=='state'    
+    url = "#{url_base}/api/all_schools?year=#{@current_year}&school_type=#{@stype}"
+    html += "<a href='#{url}'>Full list...</a>"
+  end
+  
+  page['sidebar_ajax'].replace_html(html)
+
+end 
+
+#
+# Legend
+#
+html=%Q(
+  <img width=15 height=25 src='/images/icons/0-99/blank.png'><font size='-2'>No API score</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDYellowIcons/blank.png'><font size='-2'>API&#60;700</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDGreenIcons/blank.png'><font size='-2'>700&#60;API&#60;800</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDBlueIcons/blank.png'><font size='-2'>800&#60;API&#60;900</font>
+  <img width=15 height=25 src='/images/icons/markers/largeTDRedIcons/blank.png'><font size='-2'>API>900</font> 
+)
+page['legend_ajax'].replace_html(html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
